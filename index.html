@@ -2,6 +2,9 @@
 
 <html lang="en">
 <style>
+body{
+	background-color: gray;
+}
 	#blind{
 	    width:2300px;
         height:960px;
@@ -11,7 +14,10 @@
 		margin: -300px, -300px, -300px, -300px;
 	}
 	#center{
-		margin: -300px, -300px, -300px, -300px;
+	    background-color: gray;
+	    vertical-align: middle;
+	    width: 800px;
+	    height: 900 px;
 		float : center;
 		text-align : center;
 	}
@@ -27,12 +33,17 @@
     }
     
     #controls {
-        margin: -300px, -300px, -300px, -300px;
+        margin: 0 auto;
+        vertical-align:middle;
+        width:800px;
+        height: 120px;
+        
 		float : center;
 		text-align : center;
-		color : black;
-		font-weight: bold;
+		color : white;
+		font-weight: normal;
 		font-size: 1em;
+		
 		
     }
     
@@ -49,15 +60,13 @@
 	</head>
 	
 	<body>
-
 	    <div id="controls">
 	     	 Wake up time: <input type="time" id="alarm" value="23:15:00"> <button onclick=setAlarm()>setAlarm</button>>
-	         <button onclick=testInput()>testInput</button>
+	    <button onclick=testInput()>testInput</button>
 	    <div id ="alarmDisplay">
          	 wake up in 7 hours
         	 </div>	
 	 	</div>
-	
 	
 			<div id="center">
      			<script type="text/javascript" src="js/upblind.js"></script>
