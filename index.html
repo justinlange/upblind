@@ -43,8 +43,6 @@ body{
 		color : white;
 		font-weight: normal;
 		font-size: 1em;
-		
-		
     }
     
     #alarmDisplay {
@@ -60,18 +58,18 @@ body{
 	</head>
 	
 	<body>
-	    <div id="controls">
+          <div id="controls">
 	     	 Wake up time: <input type="time" id="alarm" value="23:15:00"> <button onclick=setAlarm()>setAlarm</button>>
-	    <button onclick=testInput()>testInput</button>
-	    <div id ="alarmDisplay">
+	    	 <button onclick=lowerBlinds()>Lower Blinds</button>
+	     	 <button onclick=raiseBlinds()>Raise Blinds</button>
+	      <div id ="alarmDisplay">
          	 wake up in 7 hours
-        	 </div>	
-	 	</div>
+          </div>
+         </div>
 	
 			<div id="center">
-     			<script type="text/javascript" src="js/upblind.js"></script>
 				<script language="javascript" type="text/javascript" src="js/p5.min.js"></script>
-				<script language="javascript" type="text/javascript" src="../p5.min.js"></script>
+     			<script type="text/javascript" src="js/upblind.js"></script>
 			</div>
 
 	</body>
