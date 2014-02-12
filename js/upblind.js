@@ -9,9 +9,9 @@ var animationAmount;
 function setup() {
   var canvas = createGraphics(width, 600);
   canvas.position(300, 100);
-  margin = 100;
-  bottomPos = height-margin;
-  blindPos = 100;
+  margin = 90;
+  bottomPos = 540;
+  blindPos = 30;
   blindDown = false;
   animationAmount = 10;
   setInterval(animateBlind, 100);
@@ -21,9 +21,9 @@ function draw() {
      background(140);
 	 noStroke();
  	 fill(245);
- 	 rect(0,60,width,margin-10);
- 	 fill(245,200);
- 	 rect(0,margin-10,width,margin);
+ 	 rect(0,60,width,30);
+ 	 fill(0,70);
+ 	 rect(0,margin-5,width,10);
  	 fill(252,190,160);
  	 rect(0, margin, width, blindPos);
  	 fill(120);
