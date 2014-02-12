@@ -10,7 +10,7 @@ function setup() {
   canvas.position(300, 100);
   margin = 40;
   bottomPos = height-margin;
-  blindPos = 200;
+  blindPos = 100;
   blindDown = false;
   animationAmount = 10;
   setInterval(animateBlind, 100);
@@ -19,9 +19,11 @@ function setup() {
 function draw() {
      background(128);
 	 noStroke();
- 	 fill(252,100);
- 	 rect(0,0,width,margin);
- 	 fill(252,190,160,100);
+ 	 fill(245);
+ 	 rect(0,0,width,margin-10);
+ 	 fill(245,200);
+ 	 rect(0,margin-10,width,margin);
+ 	 fill(252,190,160);
  	 rect(0, margin, width, blindPos);
 }
 
