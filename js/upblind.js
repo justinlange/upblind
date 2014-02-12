@@ -6,8 +6,9 @@ var blindDown;
 var animationAmount;
 
 function setup() {
-  createGraphics(width, height);
-  margin = 0;
+  var canvas = createGraphics(width, 600);
+  canvas.position(300, 100);
+  margin = 40;
   bottomPos = height-margin;
   blindPos = 200;
   blindDown = false;
@@ -18,8 +19,10 @@ function setup() {
 function draw() {
      background(128);
 	 noStroke();
+ 	 fill(252,100);
+ 	 rect(0,0,width,margin);
  	 fill(252,190,160,100);
- 	 rect(margin, margin, width-margin, blindPos);
+ 	 rect(0, margin, width, blindPos);
 }
 
 function animateBlind(){
