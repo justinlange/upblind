@@ -20,7 +20,7 @@ socket.on('serialEvent', function (data) {
 
 function setup() {
   var canvas = createGraphics(width, 600);
-  canvas.position(300, 100);
+  canvas.position(316, 120);
   margin = 90;
   bottomPos = 540;
   blindPos = 30;
@@ -85,3 +85,4 @@ function raiseBlinds(){
 function setAlarm() {
 alarmDisplay.innerHTML = alarm.value;
 }
+

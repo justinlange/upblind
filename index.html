@@ -1,21 +1,13 @@
 <!DOCTYPE html>
-<head>
-</head>
-<style>
-<html lang="en">
-<style>
-body{
-	background-color: #8c8c8c;
-}
 
-	#blind{
-	    width:2300px;
-        height:960px;
-		float : center;
-		text-align : center;
-		border: 10px solid transparent;
-		margin: -300px, -300px, -300px, -300px;
+<html lang="en">
+
+<style>
+	body{
+		background-color: #8c8c8c;
+		padding: 0px;
 	}
+
 	#center{
 		margin: -300px, -300px, -300px, -300px;
 	    background-color: gray;
@@ -26,92 +18,104 @@ body{
 		text-align : center;
 	}
 	
-	#canvas {
-        width:2000px;
-        height:2000px;
-        border: 10px solid transparent;
+	#box1 {
+		margin: 0 auto;
+        width:300px;
+        height:100px;
+        float : left;
+        background-color: black;
     }
-    .rectangle {
-        border: 1px solid #FF0000;
-        position: absolute;
-    }
-</style>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8"/>
-		<title>UPBLIND</title>
-		<script type="text/javascript" src="js/upblind.js"></script>
-		<script language="javascript" type="text/javascript" src="js/p5.min.js"></script>
- 		<script language="javascript" type="text/javascript" src="js/blind1.js"></script>
-	</head>
-	
-	<body>
-	<div id="center">
-	<script language="javascript" type="text/javascript" src="../p5.min.js"></script>
- 	 <script language="javascript" type="text/javascript" src="blind1.js"></script>
-	      <div id="controls">
-	      Wake up time: <input type="time" id="alarm" value="23:15:00"> <button onclick=setAlarm()>setAlarm</button>>
-	     <button onclick=lowerBlinds()>Lower Blinds</button>
-	     <button onclick=raiseBlinds()>Raise Blinds</button>
-	      <div id ="alarmDisplay">
-          Sleep well!
-          </div>
-	
-	<!--
-	 </div>
-	  <div id="blind" float="center">
-	
-	</div>
-
--->
-
-<!--	<div id="blind">
-	    <script language="javascript" type="text/javascript" src="mouseRect.js"></script>
-    <script>
-        initDraw(document.getElementById('canvas'));
-    </script>
-	</div>
-	-->
-
-    
-    #controls {
+        #controls {
         margin: 0 auto;
         vertical-align:middle;
-        width:800px;
-        height: 120px;
-        
+        background-color: gray;
+        width:300px;
+        height: 100px;
 		float : center;
 		text-align : center;
 		color : white;
 		font-weight: normal;
-		font-size: 1em;
+		font-family: 'Oswald';
+   		font-size: 20px;
     }
     
     #alarmDisplay {
-    	
     }
-    
+
+    #alarm {
+    background-color: #ccc;
+    border-radius: 5px;
+    border-radius: 5px;
+    border-radius:6px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;	
+    }
+
+    #alarm:hover {
+    border: none;
+    background:#bf6e61;
+    box-shadow: 0px 0px 1px #777;
+	}
+
+
+    #alarm2:hover {
+    border: none;
+    background:#bf6e61;
+    box-shadow: 0px 0px 1px #777;
+	}
+
+    #alarm2 {
+    background-color: #ccc;
+    border-radius: 5px;
+    border-radius: 5px;
+    border-radius:6px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;	
+    }
+
+    #alarm3 {
+    background-color: #ccc;
+    border-radius: 5px;
+    border-radius: 5px;
+    border-radius:6px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 26px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;	
+    }
 </style>
 
 
-	<head>
-		<script language="javascript" type="text/javascript" src="js/p5.min.js"></script>
-     			<script type="text/javascript" src="js/upblind.js"></script>
-			
+<head>
 		<meta charset="utf-8"/>
 		<title>UPBLIND</title>
-	</head>
+		<script type="text/javascript" src="js/upblind.js"></script>
+		<script language="javascript" type="text/javascript" src="js/p5.min.js"></script>
+
+</head>
 	
-	<body>
-          <div id="controls">
-	     	 Wake UP time: <input type="time" id="alarm" value="23:15:00"> <button onclick=setAlarm()>setAlarm</button>>
-	    	 <button onclick=lowerBlinds()>Lower Blinds</button>
-	     	 <button onclick=raiseBlinds()>Raise Blinds</button>
-	      <div id ="alarmDisplay">
-         	 wake up in 7 hours
-          </div>
-         </div>				
-	</body>
+
+<body>
+
+	      <div id="controls">
+	    	  Wake Up Time : <input type="time" id="alarm" value="23:15:00"> <button onclick = setAlarm() id="alarm2"> set alarm</button>
+	    	  <br/>
+	    	 <button onclick=lowerBlinds() id="alarm3">Lower Blinds</button>
+	    	 <button onclick=raiseBlinds() id="alarm3">Raise Blinds</button>
+	      <div id ="alarmDisplay">Sleep well! </div>
+	      <div id="box1"></div>
+
+</body>
 </html>
 
