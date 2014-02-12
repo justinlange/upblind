@@ -1,5 +1,69 @@
-!- this is the first line of HTML
-!- this is the second line of HTML
+<!DOCTYPE html>
 
-<script = somejavascript>
-<div></div>
+<head>
+</head>
+<style>
+	#blind{
+	    width:2300px;
+        height:960px;
+		float : center;
+		text-align : center;
+		border: 10px solid transparent;
+		margin: -300px, -300px, -300px, -300px;
+	}
+	#center{
+		margin: -300px, -300px, -300px, -300px;
+		float : center;
+		text-align : center;
+	}
+	
+	#canvas {
+        width:2000px;
+        height:2000px;
+        border: 10px solid transparent;
+    }
+    .rectangle {
+        border: 1px solid #FF0000;
+        position: absolute;
+    }
+</style>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>UPBLIND</title>
+		<script type="text/javascript" src="js/upblind.js"></script>
+		<script language="javascript" type="text/javascript" src="js/p5.min.js"></script>
+ 		<script language="javascript" type="text/javascript" src="js/blind1.js"></script>
+	</head>
+	
+	<body>
+	<div id="center">
+	<script language="javascript" type="text/javascript" src="../p5.min.js"></script>
+ 	 <script language="javascript" type="text/javascript" src="blind1.js"></script>
+	      <div id="controls">
+	      Wake up time: <input type="time" id="alarm" value="23:15:00"> <button onclick=setAlarm()>setAlarm</button>>
+	     <button onclick=lowerBlinds()>Lower Blinds</button>
+	     <button onclick=raiseBlinds()>Raise Blinds</button>
+	      <div id ="alarmDisplay">
+          Sleep well!
+          </div>
+	
+	<!--
+	 </div>
+	  <div id="blind" float="center">
+	
+	</div>
+
+-->
+
+<!--	<div id="blind">
+	    <script language="javascript" type="text/javascript" src="mouseRect.js"></script>
+    <script>
+        initDraw(document.getElementById('canvas'));
+    </script>
+	</div>
+	-->
+	</body>
+</html>
+
