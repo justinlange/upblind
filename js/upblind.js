@@ -4,18 +4,15 @@ var bottomPos;
 var topPos;
 var blindDown;
 var animationAmount;
+var revolutionFactor;
+
+//code for physical side of things
+var revolutions = 512;
 
 // open a connection to the serial server:
 var socket = io.connect('http://localhost:8080');
 
  // when you get a serialdata event, do this:
-socket.on('serialEvent', function (data) {
-	// set the stuff inside the element's HTML tags to
-	// whatever the 'value' property of the received data is:
-	temperature.value = data.temp;
-	setPoint.value = data.setPoint;
-	updateDisplay();
-});
 
 
 function setup() {
@@ -27,6 +24,7 @@ function setup() {
   blindDown = false;
   animationAmount = 10;
   setInterval(animateBlind, 100);
+  revolutionFactor = 1;
 }
 
 function draw() {
@@ -68,9 +66,7 @@ function animateBlind(){
 function lowerBlinds(){
   raising = false;	
   lowering = true;
-  $.get("/output/"+ textbox.id + "/" + slider.value);
-
-
+  setBlindPosition("l", (bottomPos-blindPos) * revolutionFactor);
 }
 
 
@@ -78,14 +74,17 @@ function lowerBlinds(){
 function raiseBlinds(){
   raising = true;	
   lowering = false;
-  $.get("/output/"+ textbox.id + "/" + slider.value);
-
-
+  setBlindPosition("r", blindPos * revolutionFactor);
 }
 
 
 function setAlarm() {
 alarmDisplay.innerHTML = alarm.value;
+}
+
+function setBlindPosition(direction, blindDir){
+  $.get("/output/"+  direction + "/" + blindDir);
+
 }
 
 
