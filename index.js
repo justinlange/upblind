@@ -26,18 +26,11 @@ var serialport = require("serialport"),		// include the serialport library
 	url = 'http://localhost:8080';            // URL to open in the browser
  
 var app = express(),								      // start Express framework
-   server = require('http').createServer(app);	// start an HTTP server
-  	io = require('socket.io').listen(server);		// listen for websocket requests
-  	
+   server = require('http').createServer(app);	// start an HTTP server 	
 
 // set up static folders for client-side JavaScript and CSS:
 app.use('/js', express.static(__dirname + '/js'));
 app.use('/css', express.static(__dirname + '/css'));
-
-var thermostat = {
-   "temp": "0.0",
-   "setPoint": "0.0"
-}
 
 // third word of the command line is serial port name:
 var portName = process.argv[2];				  
@@ -62,26 +55,18 @@ app.get('/', function (request, response) {
 });
 
 
-// listen for new socket.io connections:
-io.sockets.on('connection', function (socket) {
-   // if there's a socket client, listen for new serial data:  
-   myPort.on('data', function (data) {
-      // split the incoming data values on the comma:
-      var values = data.split(',');
-      // you now have two values in the array:
-      // temp, followed by setPoint:
-      thermostat.setPoint = parseFloat(values[0]);
-      thermostat.temp = parseFloat(values[1]);
-      
-      // send a serial event to the web client with the data:
-      socket.emit('serialEvent', thermostat);
-	});
-	
-	// if you get incoming data from the client, it'll be
-	// the updated setPoint. Send it out the serial port:
-	socket.on('socketEvent', function (data) {
-		myPort.write(data.setPoint + '\n');
-	});
+// take anything that begins with /output:
+app.get('/output/*', function (request, response) {
+  // the route is the first parameter of the URL request:
+  var blindCommand = request.params[0];  
+  console.log("received "+ blindCommand);
+
+  // send it out the serial port:
+  myPort.write(blindCommand);
+  // send an HTTP header to the client:
+  response.writeHead(200, {'Content-Type': 'text/html'});
+  // send the data and close the connection:
+  response.end(blindCommand);
 });
 
 

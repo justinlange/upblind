@@ -68,7 +68,8 @@ function animateBlind(){
 function lowerBlinds(){
   raising = false;	
   lowering = true;
-  socket.emit('socketEvent', { "lowerBlinds" : 1 });
+  $.get("/output/"+ textbox.id + "/" + slider.value);
+
 
 }
 
@@ -77,7 +78,8 @@ function lowerBlinds(){
 function raiseBlinds(){
   raising = true;	
   lowering = false;
-  socket.emit('socketEvent', { "raiseBlinds" : 1 });
+  $.get("/output/"+ textbox.id + "/" + slider.value);
+
 
 }
 
@@ -85,4 +87,6 @@ function raiseBlinds(){
 function setAlarm() {
 alarmDisplay.innerHTML = alarm.value;
 }
+
+
 
